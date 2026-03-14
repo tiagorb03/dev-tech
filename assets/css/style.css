@@ -16,16 +16,14 @@ h2 {
 
 h3 {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 10px;
+    font-size: 20px;
     text-align: end;
     color: black;
     margin-top: 2px;
 }
 
 p {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 18px;
     text-align: center;
     color: chocolate;
-    margin-top:5px;
 }
