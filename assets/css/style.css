@@ -37,11 +37,11 @@ img {
 
 nav {
     text-align: center;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 nav a {
     text-decoration: blue;
     color: rgb(30, 0, 255);
     font-weight: 200;
-    margin: 5px;
+    margin: 10px;
 }
