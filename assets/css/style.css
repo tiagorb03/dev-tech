@@ -41,7 +41,7 @@ nav {
 }
 nav a {
     text-decoration: blue;
-    color: aqua;
+    color: rgb(30, 0, 255);
     font-weight: 200;
     margin: 5px;
 }
