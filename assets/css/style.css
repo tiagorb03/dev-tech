@@ -32,11 +32,10 @@ img {
     display: flow-root;
     margin: 5px;
     width: 50px;
-    text-align: center;
 }
 
 nav {
-    text-align: start;
+    text-align: left;
     margin-top: 5px;
 }
 nav a {
