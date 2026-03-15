@@ -31,7 +31,8 @@ p {
 img {
     display: flow-root;
     margin: 5px;
-    width: 1000px;
+    width: 800px;
+    align-items: center;
 }
 
 nav {
