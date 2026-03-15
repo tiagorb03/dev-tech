@@ -10,14 +10,14 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 38px;
     text-align: center;
-    color: aquamarine;
+    color: rgb(0, 0, 0);
     margin-top: 10px;
 }
 
 h3 {
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
-    text-align: end;
+    text-align: center;
     color: black;
     margin-top: 2px;
 }
@@ -25,7 +25,7 @@ h3 {
 p {
     font-size: 18px;
     text-align: center;
-    color: chocolate;
+    color: rgb(150, 0, 0);
 }
 
 img {
