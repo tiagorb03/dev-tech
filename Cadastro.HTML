@@ -6,6 +6,7 @@
 </head>
 <body>
     <link rel="stylesheet" href="assets/css/style.css">
+    <hr>
 
     <H1>Prepare-se para o evento tech que vai mudar sua visão!</H1>
 
@@ -15,17 +16,18 @@
 
     <hr>
     <h2>Formulário de Cadastro</h2>
+
 <form>
-    <label>Nome completo:</label>
+    <label>Nome completo:</label><br>
     <input type="text" name="Nome" required><br><br>
 
-    <label>Email:</label>
+    <label>Email:</label><br>
     <input type="email" name="Email" required><br><br>
 
-    <label>Telefone:</label>
+    <label>Telefone:</label><br>
     <input type="tel" name="Telefone" required><br><br>
 
-    <label>Data de nascimento:</label>
+    <label>Data de nascimento:</label><br>
     <input type="date" name="nascimento" required><br><br>
 
     <label>Área de atuação:</label><br>
@@ -50,11 +52,13 @@
     <input type="checkbox">Amigos<br>
     <input type="checkbox">Internet<br>
 
+    <label>Observações ou expectativas para o evento:</label><br>
+    <textarea name="mensagem" rows="2" cols="30"></textarea><br><br>
+
+    <input type="submit" value="Confirmar Cadastro">
+
 </form>
-    
-    
-    
-    
-    <a href="index.html">Voltar para tela inicial</a>
+
+<a href="index.html">Voltar para tela inicial</a>
 </body>
 </html>
