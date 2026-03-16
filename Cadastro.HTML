@@ -5,11 +5,37 @@
     <title>DevTech-Cadastro</title>
 </head>
 <body>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <H1>Prepare-se para o evento tech que vai mudar sua visão!</H1>
+
+    <p>Preencha o formulario para se inscrever no evento!</p>
+    <p>Data: <strong>23/07/2026</strong></p>
+    <p>Local: <strong>Colégio Londrinense - Av. Juscelino Kubitscheck, 1652 - Quebec, Londrina - PR</strong></p>
+
+    <hr>
+    <h2>Formulário de Cadastro</h2>
 <form>
-    <label>Nome completo:</label><br>
+    <label>Nome completo:</label>
+    <input type="text" name="Nome" required><br><br>
 
+    <label>Email:</label>
+    <input type="email" name="Email" required><br><br>
 
+    <label>Telefone:</label>
+    <input type="tel" name="Telefone" required><br><br>
 
+    <label>Data de nascimento:</label>
+    <input type="date" name="nascimento" required><br><br>
+
+    <label>Área de atuação:</label><br>
+    <select name="area">
+        <option>Estudante</option>
+        <option>Desenvolvedor</option>
+        <option>Profissional de TI</option>
+        <option>Empreendedor</option>
+        <option>Outro</option>
+    </select><br><br>
 
 </form>
     
