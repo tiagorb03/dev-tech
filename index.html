@@ -8,11 +8,35 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <nav>
-        <a href="index.html">Início</a> |
-        <a href="Cadastro.HTML">Cadastro</a> |
-        <a href="Eventos.HTML">Eventos</a> |
-    </nav>
+<nav class="navbar">
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="Cadastro.HTML">Cadastro</a></li>
+        <li><a href="Eventos.HTML">Eventos</a></li>
+    </ul>
+</nav>
+
+<style>
+    .navbar ul {
+        list-style-type: none; /* Remove bolinhas da lista */
+        margin: 0;
+        padding: 0;
+        background-color: #333; /* Cor de fundo */
+        display: flex; /* Alinha os itens horizontalmente */
+        justify-content: center; /* Centraliza o menu */
+    }
+
+    .navbar li a {
+        display: block;
+        color: white; /* Cor do texto */
+        padding: 15px 20px; /* Espaçamento interno */
+        text-decoration: none; /* Remove sublinhado */
+    }
+
+    .navbar li a:hover {
+        background-color: #555; /* Cor ao passar o mouse */
+    }
+</style>
 
     <img src="assets/img/Banner-DevTech-Evento.png" alt="Desenvolvedor">
 
