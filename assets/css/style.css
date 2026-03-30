@@ -87,3 +87,42 @@ time{
     color: var(--cor-secundaria);
     margin: 20px 0;
 }
+
+footer {
+  text-align: center;
+  background: #615f5f;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column; /* Empilha itens em telas pequenas */
+    }
+}
+
+.navbar li a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-container h1 {
+  text-align: center;
+}
