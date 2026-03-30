@@ -76,9 +76,16 @@ img:hover {
     transition: 0.3s;
 }
 
-form{
+form {
     font-size: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+  margin-top: 15px;
+  font-weight: 500;
 }
 
 time{
