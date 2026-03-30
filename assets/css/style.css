@@ -82,8 +82,8 @@ form{
 }
 
 time{
-    font-size: 42px;
+    font-size: 32px;
     text-align: center;
-    color: var(--cor-primaria);
-    margin: 30px 0 10px;
+    color: var(--cor-secundaria);
+    margin: 20px 0;
 }
