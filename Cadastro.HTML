@@ -34,42 +34,65 @@
 
 <form>
 
-    <p>Preencha o formulário abaixo para garantir sua participação no evento DevTech:</p>
+<p>
+Preencha o formulário abaixo para participação no evento DevTech. 
+Todas as informações serão utilizadas apenas para fins de organização.
+</p>
 
+<div class="form-group">
     <label>Nome completo:</label>
     <input type="text" required>
+</div>
 
+<div class="form-group">
     <label>Email:</label>
     <input type="email" required>
+</div>
 
+<div class="form-group">
     <label>Telefone:</label>
     <input type="tel">
+</div>
 
+<div class="form-group">
     <label>Data de nascimento:</label>
     <input type="date">
+</div>
 
+<div class="form-group">
     <label>Área de atuação:</label>
     <select>
         <option>Estudante</option>
         <option>Desenvolvedor</option>
         <option>Outro</option>
     </select>
+</div>
 
+<div class="form-group">
     <label>Qual atividade você tem mais interesse?</label>
-    <label><input type="radio" name="atividade"> Palestras sobre IA</label>
-    <label><input type="radio" name="atividade"> Workshop Mobile</label>
-    <label><input type="radio" name="atividade"> Ambos</label>
+    <div class="radio-group">
+        <label><input type="radio" name="atividade"> Palestras sobre IA</label>
+        <label><input type="radio" name="atividade"> Workshop Mobile</label>
+        <label><input type="radio" name="atividade"> Ambos</label>
+    </div>
+</div>
 
+<div class="form-group">
     <label>Como ficou sabendo do evento?</label>
-    <label><input type="radio" name="origem"> Instagram</label>
-    <label><input type="radio" name="origem"> Faculdade / Escola</label>
-    <label><input type="radio" name="origem"> Amigos</label>
-    <label><input type="radio" name="origem"> Internet</label>
+    <div class="radio-group">
+        <label><input type="radio" name="origem"> Instagram</label>
+        <label><input type="radio" name="origem"> Faculdade / Escola</label>
+        <label><input type="radio" name="origem"> Amigos</label>
+        <label><input type="radio" name="origem"> Internet</label>
+    </div>
+</div>
 
-    <label>Observações ou expectativas:</label>
+<div class="form-group">
+    <label>Observações:</label>
     <textarea rows="4"></textarea>
+</div>
 
-    <button type="submit">Confirmar Inscrição</button>
+<button type="submit">Enviar</button>
 
 </form>
 
