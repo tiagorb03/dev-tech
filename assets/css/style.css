@@ -125,3 +125,69 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+/* FORMULÁRIO PADRÃO ABNT */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: none;
+    border: 1px solid #ccc;
+}
+
+/* TÍTULO */
+form p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* GRUPO DE CAMPOS */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* LABEL */
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* INPUTS */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 8px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+/* RADIO GROUP */
+.radio-group {
+    margin-top: 5px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* BOTÃO */
+form button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #333;
+}
