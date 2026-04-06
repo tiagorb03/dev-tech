@@ -191,3 +191,11 @@ form button {
 form button:hover {
     background: #333;
 }
+
+body {
+    line-height: 1.5;
+}
+
+label {
+    font-size: 14px;
+}
