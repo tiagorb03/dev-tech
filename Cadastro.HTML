@@ -1,72 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-br"> 
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>DevTech-Cadastro</title>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <hr>
 
-    <H1>Prepare-se para o evento tech que vai mudar sua visão!</H1>
+<nav>
+    <a href="index.html">Início</a>
+    <a href="Cadastro.HTML">Cadastro</a>
+    <a href="Eventos.HTML">Eventos</a>
+</nav>
 
-    <p>Preencha o formulario para se inscrever no evento!</p>
-    <p>Data: <strong>23/07/2026</strong></p>
-    <p>Local: <strong>Colégio Londrinense - Av. Juscelino Kubitscheck, 1652 - Quebec, Londrina - PR</strong></p>
+<header>
+    <h1>Inscrição para o Evento</h1>
 
-    <hr>
+    <div class="info">
+        <span>📅 23/07/2026</span>
+        <span>📍 Londrina/PR</span>
+    </div>
+</header>
 
-<div class="form-container">  
-    
-    <h2>Formulário de Cadastro</h2>
+<div class="container">
 
 <form>
 
-    <label>Nome completo:</label><br>
-    <input type="text" name="Nome" required><br><br>
+    <label>Nome completo:</label>
+    <input type="text" required>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+    <label>Email:</label>
+    <input type="email" required>
 
-    <label>Telefone:</label><br>
-    <input type="tel" name="Telefone" required><br><br>
+    <label>Telefone:</label>
+    <input type="tel">
 
-    <label>Data de nascimento:</label><br>
-    <input type="date" name="nascimento" required><br><br>
+    <label>Data de nascimento:</label>
+    <input type="date">
 
-    <label>Área de atuação:</label><br>
-    <select name="area">
+    <label>Área de atuação:</label>
+    <select>
         <option>Estudante</option>
         <option>Desenvolvedor</option>
-        <option>Profissional de TI</option>
-        <option>Empreendedor</option>
         <option>Outro</option>
-    </select><br><br>
+    </select>
 
-    <label>Qual atividade você tem mais interesse?</label><br><br>
+    <label>Qual atividade você tem mais interesse?</label>
+    <label><input type="radio" name="atividade"> Palestras</label>
+    <label><input type="radio" name="atividade"> Workshop</label>
 
-    <input type="radio" name="interesse">Palestras sobre Inteligência Artificial<br>
-    <input type="radio" name="interesse">Workshop de Desenvolvimento Mobile<br>
-    <input type="radio" name="interesse">Ambos<br><br>
+    <label>Observações:</label>
+    <textarea></textarea>
 
-    <label>Como ficou sabendo do evento?</label><br>
+    <button type="submit">Confirmar Inscrição</button>
 
-    <input type="checkbox">Instagram<br>
-    <input type="checkbox">Faculdade / Escola<br>
-    <input type="checkbox">Amigos<br>
-    <input type="checkbox">Internet<br>
-
-    <label>Observações ou expectativas para o evento:</label><br>
-    <textarea name="mensagem" rows="2" cols="30"></textarea><br><br>
-
-    <input type="submit" value="Confirmar Cadastro">
 </form>
+
 </div>
 
 <footer>
     © 2026 DevTech
-  </footer>
+</footer>
 
-<a href="index.html">Voltar para tela inicial</a>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
