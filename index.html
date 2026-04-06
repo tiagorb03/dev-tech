@@ -2,65 +2,61 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>DevTech</title>
+    <title>DevTech - Início</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <link rel="stylesheet" href="assets/css/style.css">
-
-<nav class="navbar">
-    <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="Cadastro.HTML">Cadastro</a></li>
-        <li><a href="Eventos.HTML">Eventos</a></li>
-    </ul>
+<nav>
+    <a href="index.html">Início</a>
+    <a href="Cadastro.HTML">Cadastro</a>
+    <a href="Eventos.HTML">Eventos</a>
 </nav>
 
-<style>
-    .navbar ul {
-        list-style-type: none; /* Remove bolinhas da lista */
-        margin: 0;
-        padding: 0;
-        background-color: #333; /* Cor de fundo */
-        display: flex; /* Alinha os itens horizontalmente */
-        justify-content: center; /* Centraliza o menu */
-    }
+<header>
+    <h1>DevTech</h1>
+    <p>IA e Desenvolvimento Mobile</p>
 
-    .navbar li a {
-        display: block;
-        color: white; /* Cor do texto */
-        padding: 15px 20px; /* Espaçamento interno */
-        text-decoration: none; /* Remove sublinhado */
-    }
+    <div class="info">
+        <span>📅 23/07/2026</span>
+        <span>📍 Teatro Colégio Londrinense - Londrina/PR</span>
+    </div>
 
-    .navbar li a:hover {
-        background-color: #555; /* Cor ao passar o mouse */
-    }
-</style>
+    <div id="contador"></div>
+</header>
 
-    <img src="assets/img/Banner-DevTech-Evento.png" alt="Desenvolvedor">
+<div class="container">
 
-    <h1>DevTech - IA e Desenvolvimento Mobile</h1>
-    <h2>Bem vindo ao melhor evento DevTech!</h2>
-    
-    <p>Vivemos em uma era em que a Inteligência Artificial está transformando rapidamente a forma como consumimos informação e desenvolvemos tecnologia. Pensando nisso, este evento foi criado para promover conhecimento, consciência digital e capacitação prática.
+    <div class="card">
+        <div class="icon">💡</div>
+        <div>
+            <h3>Impacto da Inteligência Artificial</h3>
+            <p>Evento focado em inovação, IA e desenvolvimento mobile.</p>
+        </div>
+    </div>
 
-Durante o encontro, especialistas irão apresentar palestras sobre conscientização em Inteligência Artificial, abordando temas importantes como o impacto da IA no dia a dia e como identificar imagens e vídeos falsos (deepfakes), um dos grandes desafios da informação na internet atualmente.
+    <div class="card">
+        <div class="icon">🎤</div>
+        <div>
+            <h3>Palestras e Networking</h3>
+            <p>Especialistas compartilhando conhecimento e experiências.</p>
+        </div>
+    </div>
 
-Além das palestras, o evento contará com um workshop prático de desenvolvimento de aplicativos mobile, onde os participantes terão a oportunidade de aprender conceitos e técnicas para criar aplicativos para Android e iOS, explorando ferramentas modernas e boas práticas de desenvolvimento.
+    <div class="card">
+        <div class="icon">📱</div>
+        <div>
+            <h3>Workshop Prático</h3>
+            <p>Criação de aplicativos mobile na prática.</p>
+        </div>
+    </div>
 
-O objetivo é unir educação tecnológica, pensamento crítico e prática, preparando os participantes tanto para compreender os riscos e oportunidades da IA quanto para desenvolver suas próprias soluções tecnológicas.
-
-Este evento é ideal para estudantes, desenvolvedores, profissionais de tecnologia e qualquer pessoa interessada em inovação digital.</p>
-
-    <h3>Dia 23/07/26 no teatro Colégio Londrinense - Av. Juscelino Kubitscheck, 1652 - Quebec, Londrina - PR</h3>
-
-    <p class="time" id="tempo"></p>
+</div>
 
 <footer>
     © 2026 DevTech
 </footer>
 
-    <script src="assets/js/script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
