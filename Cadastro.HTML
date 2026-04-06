@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
+<div class="banner">
+    <div class="banner-overlay">
+        <h1>DevTech</h1>
+        <p>IA e Desenvolvimento Mobile</p>
+    </div>
+</div>
+
 <head>
     <meta charset="UTF-8">
     <title>Cadastro</title>
@@ -26,6 +34,8 @@
 
 <form>
 
+    <p>Preencha o formulário abaixo para garantir sua participação no evento DevTech:</p>
+
     <label>Nome completo:</label>
     <input type="text" required>
 
@@ -46,17 +56,26 @@
     </select>
 
     <label>Qual atividade você tem mais interesse?</label>
-    <label><input type="radio" name="atividade"> Palestras</label>
-    <label><input type="radio" name="atividade"> Workshop</label>
+    <label><input type="radio" name="atividade"> Palestras sobre IA</label>
+    <label><input type="radio" name="atividade"> Workshop Mobile</label>
+    <label><input type="radio" name="atividade"> Ambos</label>
 
-    <label>Observações:</label>
-    <textarea></textarea>
+    <label>Como ficou sabendo do evento?</label>
+    <label><input type="radio" name="origem"> Instagram</label>
+    <label><input type="radio" name="origem"> Faculdade / Escola</label>
+    <label><input type="radio" name="origem"> Amigos</label>
+    <label><input type="radio" name="origem"> Internet</label>
+
+    <label>Observações ou expectativas:</label>
+    <textarea rows="4"></textarea>
 
     <button type="submit">Confirmar Inscrição</button>
 
 </form>
 
 </div>
+
+<div id="contador-footer"></div>
 
 <footer>
     © 2026 DevTech

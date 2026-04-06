@@ -1,18 +1,20 @@
-const dataEvento = new Date(2026, 7, 23, 19, 0, 0); 
+const dataEvento = new Date("2026-07-23 09:00:00").getTime();
 
-function atualizarContador() {
-  const agora = new Date();
-  const diferenca = dataEvento - agora;
+setInterval(() => {
+    const agora = new Date().getTime();
+    const distancia = dataEvento - agora;
 
-  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
-  const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
-  const segundos = Math.floor((diferenca / 1000) % 60);
+    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
 
-  document.getElementById("tempo").innerText =
-    `${dias} dias, ${horas}h ${minutos}m ${segundos}s`;
-}
+    const texto = `Faltam ${dias}d ${horas}h ${minutos}m ${segundos}s para o evento`;
 
-setInterval(atualizarContador, 1000);
+    const topo = document.getElementById("contador");
+    const footer = document.getElementById("contador-footer");
 
-atualizarContador();
+    if(topo) topo.innerHTML = texto;
+    if(footer) footer.innerHTML = texto;
+
+}, 1000);
