@@ -199,3 +199,8 @@ body {
 label {
     font-size: 14px;
 }
+
+.card p {
+    text-align: justify;
+    line-height: 1.6;
+}
