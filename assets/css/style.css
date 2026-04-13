@@ -44,12 +44,13 @@ nav a:hover {
 
 
 .container {
-  max-width: 500px;
+  max-width: 900px;
   margin: 60px auto;
   padding: 35px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 90%;
 }
 
 .container h1 {
@@ -155,7 +156,15 @@ footer {
 }
 
 /* FORMULÁRIO PADRÃO ABNT */
-
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: none;
+    border: 1px solid #ccc;
+}
 /* TÍTULO */
 form p {
     font-size: 16px;
