@@ -44,9 +44,16 @@ nav a:hover {
 
 
 .container {
-    width: 90%;
-    max-width: 900px;
-    margin: auto;
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 35px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.container h1 {
+  text-align: center;
 }
 
 
@@ -193,7 +200,7 @@ form p {
 
 .radio-group label {
     font-weight: normal;
-    display: auto;
+    display: block;
     margin-bottom: 5px;
 }
 
