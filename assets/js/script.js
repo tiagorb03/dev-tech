@@ -19,3 +19,6 @@ setInterval(() => {
 
 }, 1000);
 
+const campo = document.getElementById('outro');
+campo.disabled = true;  // Desabilita
+campo.disabled = false; // Habilita
