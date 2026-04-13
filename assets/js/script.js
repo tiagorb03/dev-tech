@@ -19,7 +19,8 @@ setInterval(() => {
 
 }, 1000);
 
-let campo = document.getElementById("outro");
+let campo = document.getElementById("meuInput");
 if (campo) {
     campo.disabled = true;
 }
+
