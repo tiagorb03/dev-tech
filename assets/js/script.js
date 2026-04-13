@@ -24,3 +24,10 @@ if (campo) {
     campo.disabled = true;
 }
 
+function toggleCampo() {
+    let checkbox = document.getElementById("check");
+    let campo = document.getElementById("meuInput");
+    
+    
+    campo.disabled = !checkbox.checked;
+}
