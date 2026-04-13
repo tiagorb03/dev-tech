@@ -164,6 +164,8 @@ form {
     margin: auto;
     box-shadow: none;
     border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
 }
 /* TÍTULO */
 form p {
