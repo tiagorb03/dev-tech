@@ -193,7 +193,7 @@ form p {
 
 .radio-group label {
     font-weight: normal;
-    display: block;
+    display: auto;
     margin-bottom: 5px;
 }
 
