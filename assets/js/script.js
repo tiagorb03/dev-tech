@@ -18,3 +18,4 @@ setInterval(() => {
     if(footer) footer.innerHTML = texto;
 
 }, 1000);
+
