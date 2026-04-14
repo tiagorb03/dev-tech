@@ -66,16 +66,6 @@ nav a:hover {
     border-left: 5px solid #2563eb;
 }
 
-
-form {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
 input, select, textarea {
     width: 100%;
     padding: 10px;
@@ -167,6 +157,8 @@ form {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    box-shadow: none;
+    border: 1px solid #ccc;
 }
 /* TÍTULO */
 form p {
