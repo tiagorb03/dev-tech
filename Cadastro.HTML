@@ -16,7 +16,7 @@
     <link rel="icon" href="assets/img/logo.png">
     <link rel="shortcut icon" href="assets/img/logo.png">
 </head>
-    <script src="https://cdm.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script>
         const supabaseClient = supabase.createClient(
             "https://rxdyojsemxkjlpeciuuz.supabase.co",
@@ -158,9 +158,12 @@ const dados = {
                 .from("Cadastro")
                 .insert([dados]);
  
-            if (error) throw error;
- 
-            window.location.href = "obrigado.html";
+            if (error) { 
+             
+                 alert(error.message);
+                 return;
+             
+                }
  
         } catch (err) {
             console.error(err);
