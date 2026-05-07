@@ -19,7 +19,7 @@
     <script src="https://cdm.jsdelivr.net/npm/@supabase/supabase-js"></script>
     <script>
         const supabaseClient = supabase.createClient(
-            "https://rxdyojsemxkjlpeciuuz.supabase.co/rest/v1/",
+            "https://rxdyojsemxkjlpeciuuz.supabase.co",
             "sb_publishable_Pu-khzlBvfvNLxW7zohtuA_mp4JA8uX"
         );
     </script>
@@ -45,7 +45,7 @@
 
 <div class="container">
 
-<form id="formCadastro" action="https://formspree.io/f/mzdopalg" method="post">
+<form id="formCadastro">
 
 <p>
 Preencha o formulário abaixo para participação no evento DevTech. 
@@ -106,14 +106,14 @@ Todas as informações serão utilizadas apenas para fins de organização.
 
 <div class="form-group">
     <label>Observações:</label>
-    <textarea rows="4"></textarea>
+    <textarea id="outros" rows="4"></textarea>
 </div>
 
 <!--Config Formspree-->
 <input type="hidden" name="_subject" value="Nova inscrição - DevTech">
 
 
-<button type="submit">Enviar</button>
+<button type="submit" id="btnEnviar">Enviar</button>
 
 </form>
 
@@ -148,8 +148,8 @@ const dados = {
     nascimento: formData.get("nascimento"),
     atuacao: formData.get("atuacao"),
     interesse: formData.get("interesse"),
-    fonte: formData.getAll("fonte[]").join(", "),
-    fonte_outros: formData.get("fonte_outros"),
+    fonte: formData.getAll("origem[]").join(", "),
+    fonte_outros: formData.get("outrostexto"),
     outros: formData.get("outros")
 };
  
