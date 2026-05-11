@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
  
         const formData = new FormData(form);
  
-const dados = {
+ const dados = {
     nome: formData.get("nome"),
     email: formData.get("email"),
     telefone: formData.get("telefone"),
@@ -124,3 +124,5 @@ const dados = {
     });
  
 });
+
+
