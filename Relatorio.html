@@ -9,8 +9,14 @@
         <link rel="shortcut icon" href="assets/img/logo.png">
         <link rel="stylesheet" href="assets/css/style.css">
 
-        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
     </head>
+     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+     <script>
+        const supabaseClient = supabase.createClient(
+            "https://rxdyojsemxkjlpeciuuz.supabase.co",
+            "sb_publishable_Pu-khzlBvfvNLxW7zohtuA_mp4JA8uX"
+        );
+     </script>
 
     <header>
         <h1>Relatorio de cadastro do Evento</h1>
@@ -28,7 +34,7 @@
             <a href="Cadastro.HTML">Cadastro</a>
             <a href="Eventos.HTML">Eventos</a>
         </nav>
-
+     <div class="container">
         <table>
             <thead>
                 <tr>
@@ -43,11 +49,13 @@
 
             <tbody id="tabelaInscritos"></tbody>
         </table>
+     </div>
+    
             
- <footer>
-    © 2026 DevTech
- </footer>
+     <footer>
+     © 2026 DevTech
+     </footer>
 
-    <script src="assets/js/script.js"></script>
- </body>
+     <script src="assets/js/script.js"></script>
+    </body>
 </html>
