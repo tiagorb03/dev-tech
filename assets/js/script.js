@@ -32,6 +32,10 @@ function toggleCampo() {
     campo.disabled = !checkbox.checked;
 }
 
+if (document.getElementById("tabelaInscritos")) {
+     carregarInscritos();
+}
+
 async function carregarInscritos() {
 
     const { data, error } = await supabaseClient
