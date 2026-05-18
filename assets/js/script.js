@@ -68,12 +68,78 @@ async function carregarInscritos() {
 
         tabela.innerHTML += `
             <tr>
-                <td>${inscrito.nome ?? ""}</td>
-                <td>${inscrito.email ?? ""}</td>
-                <td>${inscrito.telefone ?? ""}</td>
-                <td>${inscrito.atuacao ?? ""}</td>
-                <td>${inscrito.interesse ?? ""}</td>
-                <td>${inscrito.data ?? ""}</td>
+                <td>
+                    <input
+                        type="text"
+                        id="nome-${inscrito.id}"
+                        value="${inscrito.nome ?? ""}"
+                        readonly
+                    >
+                </td>
+
+                <td>
+                    <input
+                        type="email"
+                        id="email-${inscrito.id}"
+                        value="${inscrito.email ?? ""}"
+                        readonly
+                    >
+                </td>
+
+                <td>
+                    <input
+                        type="text"
+                        id="telefone-${inscrito.id}"
+                        value="${inscrito.telefone ?? ""}"
+                        readonly
+                    >
+                </td>
+
+                <td>
+                    <input
+                        type="text"
+                        id="atuacao-${inscrito.id}"
+                        value="${inscrito.atuacao ?? ""}"
+                        readonly
+                    >
+                </td>
+
+                <td>
+                    <input
+                        type="text"
+                        id="interesse-${inscrito.id}"
+                        value="${inscrito.interesse ?? ""}"
+                        readonly
+                    >
+                </td>
+
+                <td>
+                    ${inscrito.data ?? ""}
+                </td>
+
+                <td>
+                   <button
+                      id="btnEditar-${inscrito.id}"
+                      onclick="habilitarEdicao(${inscrito.id})"]
+                    >
+                       Editar
+                    </button>
+
+                    <button
+                      id="btnExcluir-${inscrito.id}"
+                      onclick="excluirRegistro(${inscrito.id})"
+                    >
+                       Excluir
+                    </button>
+
+                    <button
+                      id="btnCancelar-${inscrito.id}"
+                      onclick="cancelarEdicao(${inscrito.id})
+                    >
+                       Cancelar
+                    </button>
+                </td>
+
 
             </tr>
         `;
@@ -147,3 +213,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
+
