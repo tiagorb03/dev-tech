@@ -221,6 +221,9 @@ body {
 
 label {
     font-size: 14px;
+    margin: auto;
+    display: flex;
+    align-items: center;
 }
 
 .card p {
