@@ -147,6 +147,163 @@ async function carregarInscritos() {
     });
 }
 
+function habilitarEdicao(id) {
+
+    document.getElementById(
+        `nome-${id}`
+    ).readOnly = false;
+
+    document.getElementById(
+        `email-${id}`
+    ).readOnly = false;
+
+    document.getElementById(
+        `telefone-${id}`
+    ).readOnly = false;
+
+    document.getElementById(
+        `atuacao-${id}`
+    ).readOnly = false;
+
+    document.getElementById(
+        `interesse-${id}`
+    ).readOnly = false;
+
+    const botao =
+        document.getElementById(
+            `btnEditar-${id}`
+        );
+
+    botao.innerText = "Salvar";
+
+    botao.onclick = function () {
+
+        salvarEdicao(id);
+    };
+}
+
+async function salvarEdicao(id) {
+
+    const nome =
+        document.getElementById(
+            `nome-${id}`
+        ).value;
+
+    const email =
+        document.getElementById(
+            `email-${id}`
+        ).value;
+
+    const telefone =
+        document.getElementById(
+            `telefone-${id}`
+        ).value;
+
+    const atuacao =
+        document.getElementById(
+            `atuacao-${id}`
+        ).value;
+
+    const interesse =
+        document.getElementById(
+            `interesse-${id}`
+        ).value;
+
+    const { error } =
+        await supabaseClient
+            .from("Cadastro")
+            .update({
+
+                nome,
+                email,
+                telefone,
+                atuacao,
+                interesse
+
+            })
+            .eq("id", id);
+
+    if (error) {
+
+        console.error(error);
+
+        alert(
+            "Erro ao atualizar registro."
+        );
+
+        return;
+    }
+
+    document.getElementById(
+        `nome-${id}`
+    ).readOnly = true;
+
+    document.getElementById(
+        `email-${id}`
+    ).readOnly = true;
+
+    document.getElementById(
+        `telefone-${id}`
+    ).readOnly = true;
+
+    document.getElementById(
+        `atuacao-${id}`
+    ).readOnly = true;
+
+    document.getElementById(
+        `interesse-${id}`
+    ).readOnly = true;
+
+    const botao =
+        document.getElementById(
+            `btnEditar-${id}`
+        );
+
+    botao.innerText = "Editar";
+
+    botao.onclick = function () {
+
+        habilitarEdicao(id);
+    };
+
+    alert(
+        "Registro atualizado com sucesso!"
+    );
+}
+
+async function excluirRegistro(id) {
+
+    const confirmar =
+        confirm(
+            "Deseja realmente excluir?"
+        );
+
+    if (!confirmar) return;
+
+    const { error } =
+        await supabaseClient
+            .from("Cadastro")
+            .delete()
+            .eq("id", id);
+
+    if (error) {
+
+        console.error(error);
+
+        alert(
+            "Erro ao excluir registro."
+        );
+
+        return;
+    }
+
+    alert(
+        "Registro excluído!"
+    );
+
+    carregarInscritos();
+}
+
 document.addEventListener("DOMContentLoaded", function () {
  
     const form = document.getElementById("formCadastro");
