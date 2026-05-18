@@ -237,3 +237,12 @@ label {
     justify-content: center;
     align-items: center;
 }
+
+.btnLogin{
+   margin-top: 15px;
+    padding: 10px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
