@@ -227,3 +227,10 @@ label {
     text-align: justify;
     line-height: 1.6;
 }
+
+.tabela-container{
+    width: 90%;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+}
