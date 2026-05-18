@@ -233,4 +233,7 @@ label {
     margin: 0 auto;
     background: white;
     border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
