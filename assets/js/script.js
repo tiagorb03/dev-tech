@@ -129,4 +129,21 @@ document.addEventListener("DOMContentLoaded", function () {
  
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("formLogin");
+        const mensagemErro = document.getElementById("mensagemErro");
 
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const usuario = document.getElementById("loginUsuario").value;
+            const senha = document.getElementById("loginSenha").value;
+
+            if (usuario === "Tigas" && senha === "Tigas458") {
+                window.location.href = "Relatorio.html";
+            } else {
+                mensagemErro.style.display = "block";
+                mensagemErro.innerText = "Usuário ou senha incorretos.";
+            }
+        });
+    });
