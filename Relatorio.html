@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Relatorio</title>
+        
+        <title>DevTech - Relatorio</title>
+        
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="icon" type="image/png" href="assets/img/logo.png">
         <link rel="icon" href="assets/img/logo.png">
         <link rel="shortcut icon" href="assets/img/logo.png">
         <link rel="stylesheet" href="assets/css/style.css">
-
+    
     </head>
-     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-     <script>
-        const supabaseClient = supabase.createClient(
-            "https://rxdyojsemxkjlpeciuuz.supabase.co",
-            "sb_publishable_Pu-khzlBvfvNLxW7zohtuA_mp4JA8uX"
-        );
-     </script>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    
+    <script>
+     const supabaseClient = supabase.createClient(
+        "https://rxdyojsemxkjlpeciuuz.supabase.co",
+        "sb_publishable_Pu-khzlBvfvNLxW7zohtuA_mp4JA8uX"
+     );
+    </script>
+    
     <header>
         <h1>Relatorio de cadastro do Evento</h1>
         <div class="info">
@@ -27,38 +32,35 @@
         </div>
         
         <div id="contador"></div>
-   </header>
+    </header>
     
     <body>
         <nav>
-         <a href="index.html">Início</a>
-         <a href="Cadastro.html">Cadastro</a>
-         <a href="Eventos.html">Eventos</a>
-         <a href="Login.html">Login</a>
+            <a href="index.html">Início</a>
+            <a href="Cadastro.html">Cadastro</a>
+            <a href="Eventos.html">Eventos</a>
+            <a href="Login.html">Login</a>
         </nav>
-     <div class="tabela-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Telefone</th>
-                    <th>Área de Atuação</th>
-                    <th>Interesse</th>
-                    <th>Data de inscrição</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody id="tabelaInscritos"></tbody>
-        </table>
-     </div>
-    
-            
-     <footer>
-     © 2026 DevTech
-     </footer>
-
-     <script src="assets/js/script.js"></script>
-
+        
+        <div class="tabela-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Telefone</th>
+                        <th>Área de Atuação</th>
+                        <th>Interesse</th>
+                        <th>Data de inscrição</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaInscritos"></tbody>
+            </table>
+        </div>
+        
+        <footer>© 2026 DevTech</footer>
+        
+        <script src="assets/js/script.js"></script>
     </body>
 </html>
