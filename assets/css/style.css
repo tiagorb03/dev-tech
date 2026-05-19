@@ -178,7 +178,7 @@ form p {
 .form-group label {
     font-weight: bold;
     margin-bottom: auto;
-    align-items: left;
+    align-items: auto;
 }
 
 /* INPUTS */
