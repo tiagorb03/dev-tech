@@ -19,11 +19,6 @@ setInterval(() => {
 
 }, 1000);
 
-const supabaseClient = supabase.createClient(
-    "https://rxdyojsemxkjlpeciuuz.supabase.co",
-    "sb_publishable_Pu-khzlBvfvNLxW7zohtuA_mp4JA8uX"
-);
-
 let campo = document.getElementById("meuInput");
 if (campo) {
     campo.disabled = true;
