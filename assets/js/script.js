@@ -134,7 +134,7 @@ async function carregarInscritos() {
 
                     <button
                       id="btnCancelar-${inscrito.id}"
-                      onclick="cancelarEdicao(${inscrito.id})
+                      onclick="cancelarEdicao(${inscrito.id})"
                     >
                        Cancelar
                     </button>
