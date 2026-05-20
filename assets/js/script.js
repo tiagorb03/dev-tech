@@ -120,7 +120,7 @@ async function carregarInscritos() {
                 <td>
                    <button
                       id="btnEditar-${inscrito.id}"
-                      onclick="habilitarEdicao(${inscrito.id})"]
+                      onclick="habilitarEdicao(${inscrito.id})"
                     >
                        Editar
                     </button>
