@@ -272,3 +272,41 @@ label {
     justify-content: center;
     align-items: center;
 }
+
+button{
+    border:none;
+    cursor:pointer;
+    padding:8px;
+    border-radius:8px;
+    margin:2px;
+    transition:0.2s;
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+button svg{
+    pointer-events:none;
+}
+
+.btn-editar{
+    background:#0d6efd;
+}
+
+.btn-salvar{
+    background:#198754;
+}
+
+.btn-excluir{
+    background:#dc3545;
+}
+
+.btn-cancelar{
+    background:#6c757d;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
