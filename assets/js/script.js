@@ -141,6 +141,7 @@ async function carregarInscritos() {
             </svg>
         `;
         btnCancelar.onclick = () => cancelarEdicao(inscrito.id);
+        btnCancelar.style.display = "none";
 
         tdAcoes.appendChild(btnEditar);
         tdAcoes.appendChild(btnExcluir);
@@ -165,6 +166,8 @@ function habilitarEdicao(id) {
         </svg>
     `;
     btnEditar.onclick = () => salvarEdicao(id);
+
+    document.getElementById(`btnCancelar-${id}`).style.display = "inline-block";
 }
 
 async function salvarEdicao(id) {
@@ -198,6 +201,8 @@ async function salvarEdicao(id) {
         </svg>
     `;
     btnEditar.onclick = () => habilitarEdicao(id);
+
+    document.getElementById(`btnCancelar-${id}`).style.display = "none";
 
     alert("Registro atualizado com sucesso!");
 }
@@ -251,6 +256,8 @@ async function cancelarEdicao(id) {
         </svg>
     `;
     btnEditar.onclick = () => habilitarEdicao(id);
+
+    document.getElementById(`btnCancelar-${id}`).style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
