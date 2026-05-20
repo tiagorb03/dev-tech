@@ -304,6 +304,43 @@ async function excluirRegistro(id) {
     carregarInscritos();
 }
 
+async function cancelarEdicao(id) {
+
+    // Busca os dados originais do banco
+    const { data, error } = await supabaseClient
+        .from("Cadastro")
+        .select("*")
+        .eq("id", id)
+        .single();
+
+    if (error) {
+        console.error(error);
+        alert("Erro ao cancelar edição.");
+        return;
+    }
+
+    // Restaura os valores originais nos inputs
+    document.getElementById(`nome-${id}`).value = data.nome ?? "";
+    document.getElementById(`email-${id}`).value = data.email ?? "";
+    document.getElementById(`telefone-${id}`).value = data.telefone ?? "";
+    document.getElementById(`atuacao-${id}`).value = data.atuacao ?? "";
+    document.getElementById(`interesse-${id}`).value = data.interesse ?? "";
+
+    // Coloca todos os campos de volta como readonly
+    document.getElementById(`nome-${id}`).readOnly = true;
+    document.getElementById(`email-${id}`).readOnly = true;
+    document.getElementById(`telefone-${id}`).readOnly = true;
+    document.getElementById(`atuacao-${id}`).readOnly = true;
+    document.getElementById(`interesse-${id}`).readOnly = true;
+
+    // Restaura o botão Editar
+    const botao = document.getElementById(`btnEditar-${id}`);
+    botao.innerText = "Editar";
+    botao.onclick = function () {
+        habilitarEdicao(id);
+    };
+}
+
 document.addEventListener("DOMContentLoaded", function () {
  
     const form = document.getElementById("formCadastro");
@@ -316,18 +353,18 @@ document.addEventListener("DOMContentLoaded", function () {
         botao.innerText = "Enviando...";
  
         const formData = new FormData(form);
- 
- const dados = {
-    nome: formData.get("nome"),
-    email: formData.get("email"),
-    telefone: formData.get("telefone"),
-    nascimento: formData.get("nascimento"),
-    atuacao: formData.get("atuacao"),
-    interesse: formData.get("interesse"),
-    fonte: formData.getAll("origem[]").join(", "),
-    fonte_outros: formData.get("outrostexto"),
-    outros: formData.get("outros")
-};
+        
+        const dados = {
+            nome: formData.get("nome"),
+            email: formData.get("email"),
+            telefone: formData.get("telefone"),
+            nascimento: formData.get("nascimento"),
+            atuacao: formData.get("atuacao"),
+            interesse: formData.get("interesse"),
+            fonte: formData.getAll("origem[]").join(", "),
+            fonte_outros: formData.get("outrostexto"),
+            outros: formData.get("outros")
+        };
  
         try {
             const { error } = await supabaseClient
@@ -340,8 +377,8 @@ document.addEventListener("DOMContentLoaded", function () {
                  return;
              
                 }
- 
-        } catch (err) {
+            
+            } catch (err) {
             console.error(err);
             alert("Erro ao salvar no banco.");
         }
