@@ -261,18 +261,18 @@ async function cancelarEdicao(id) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
- 
+
     const form = document.getElementById("formCadastro");
     const botao = document.getElementById("btnEnviar");
- 
+
     form.addEventListener("submit", async function (e) {
         e.preventDefault();
- 
+
         botao.disabled = true;
         botao.innerText = "Enviando...";
- 
+
         const formData = new FormData(form);
-        
+
         const dados = {
             nome: formData.get("nome"),
             email: formData.get("email"),
@@ -284,28 +284,28 @@ document.addEventListener("DOMContentLoaded", function () {
             fonte_outros: formData.get("outrostexto"),
             outros: formData.get("outros")
         };
- 
+
         try {
             const { error } = await supabaseClient
                 .from("Cadastro")
                 .insert([dados]);
- 
-            if (error) { 
-             
-                 alert(error.message);
-                 return;
-             
-                }
-            
-            } catch (err) {
+
+            if (error) {
+                alert("Erro ao cadastrar: " + error.message);
+            } else {
+                alert("Inscrição realizada com sucesso!");
+                form.reset(); // limpa o formulário
+            }
+
+        } catch (err) {
             console.error(err);
             alert("Erro ao salvar no banco.");
         }
- 
+
         botao.disabled = false;
         botao.innerText = "Confirmar Inscrição";
     });
- 
+
 });
 
 document.addEventListener("DOMContentLoaded", function () {
