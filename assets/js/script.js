@@ -151,9 +151,7 @@ async function carregarInscritos() {
     });
 }
 
-btnEditar.classList.add("btn-editar");
-btnExcluir.classList.add("btn-excluir");
-btnCancelar.classList.add("btn-cancelar");
+btnCancelar.style.display = "none";
 
 function habilitarEdicao(id) {
 
@@ -171,8 +169,7 @@ function habilitarEdicao(id) {
     btnEditar.onclick = () => salvarEdicao(id);
 }
 
-btnEditar.classList.remove("btn-editar");
-btnEditar.classList.add("btn-salvar");
+document.getElementById(`btnCancelar-${id}`).style.display = "inline-flex";
 
 async function salvarEdicao(id) {
 
@@ -208,9 +205,6 @@ async function salvarEdicao(id) {
 
     alert("Registro atualizado com sucesso!");
 }
-
-btnEditar.classList.remove("btn-salvar");
-btnEditar.classList.add("btn-editar");
 
 async function excluirRegistro(id) {
 
@@ -262,6 +256,8 @@ async function cancelarEdicao(id) {
     `;
     btnEditar.onclick = () => habilitarEdicao(id);
 }
+
+document.getElementById(`btnCancelar-${id}`).style.display = "none";
 
 document.addEventListener("DOMContentLoaded", function () {
  
