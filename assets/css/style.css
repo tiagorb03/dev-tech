@@ -306,7 +306,3 @@ button svg{
 .btn-cancelar{
     background:#6c757d;
 }
-
-button:hover{
-    transform:scale(1.05);
-}

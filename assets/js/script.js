@@ -151,6 +151,10 @@ async function carregarInscritos() {
     });
 }
 
+btnEditar.classList.add("btn-editar");
+btnExcluir.classList.add("btn-excluir");
+btnCancelar.classList.add("btn-cancelar");
+
 function habilitarEdicao(id) {
 
     ["nome", "email", "telefone", "atuacao", "interesse"].forEach(campo => {
@@ -166,6 +170,9 @@ function habilitarEdicao(id) {
     `;
     btnEditar.onclick = () => salvarEdicao(id);
 }
+
+btnEditar.classList.remove("btn-editar");
+btnEditar.classList.add("btn-salvar");
 
 async function salvarEdicao(id) {
 
@@ -201,6 +208,9 @@ async function salvarEdicao(id) {
 
     alert("Registro atualizado com sucesso!");
 }
+
+btnEditar.classList.remove("btn-salvar");
+btnEditar.classList.add("btn-editar");
 
 async function excluirRegistro(id) {
 
