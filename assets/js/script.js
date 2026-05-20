@@ -39,34 +39,25 @@ if (document.getElementById("tabelaInscritos")) {
 async function carregarInscritos() {
 
     const { data, error } = await supabaseClient
-
         .from("Cadastro")
-
         .select("*");
 
-    console.log(data);
-
-    console.log(error);
-
     if (error) {
-
         console.error(error);
-
         alert(error.message);
-
         return;
     }
 
-    const tabela =
-        document.getElementById("tabelaInscritos");
-
+    const tabela = document.getElementById("tabelaInscritos");
     if (!tabela) return;
 
     tabela.innerHTML = "";
 
     data.forEach(inscrito => {
 
-        tabela.innerHTML += `
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
             <tr>
                 <td>
                     <input
@@ -116,197 +107,125 @@ async function carregarInscritos() {
                 <td>
                     ${inscrito.data ?? ""}
                 </td>
-
-                <td>
-                   <button
-                      id="btnEditar-${inscrito.id}"
-                      onclick="habilitarEdicao(${inscrito.id})"
-                    >
-                       Editar
-                    </button>
-
-                    <button
-                      id="btnExcluir-${inscrito.id}"
-                      onclick="excluirRegistro(${inscrito.id})"
-                    >
-                       Excluir
-                    </button>
-
-                    <button
-                      id="btnCancelar-${inscrito.id}"
-                      onclick="cancelarEdicao(${inscrito.id})"
-                    >
-                       Cancelar
-                    </button>
-                </td>
-
-
             </tr>
         `;
 
+        // Cria a célula de ações
+        const tdAcoes = document.createElement("td");
+
+        // Botão Editar
+        const btnEditar = document.createElement("button");
+        btnEditar.id = `btnEditar-${inscrito.id}`;
+        btnEditar.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10L2 14l.146-3.854 10-10zM11.207 2 3 10.207V13h2.793L14 4.793 11.207 2z"/>
+            </svg>
+        `;
+        btnEditar.onclick = () => habilitarEdicao(inscrito.id);
+
+        // Botão Excluir
+        const btnExcluir = document.createElement("button");
+        btnExcluir.id = `btnExcluir-${inscrito.id}`;
+        btnExcluir.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm5 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1 0-2H5V1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1h2.5a1 1 0 0 1 1 1z"/>
+            </svg>
+        `;
+        btnExcluir.onclick = () => excluirRegistro(inscrito.id);
+
+        // Botão Cancelar
+        const btnCancelar = document.createElement("button");
+        btnCancelar.id = `btnCancelar-${inscrito.id}`;
+        btnCancelar.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+            </svg>
+        `;
+        btnCancelar.onclick = () => cancelarEdicao(inscrito.id);
+
+        tdAcoes.appendChild(btnEditar);
+        tdAcoes.appendChild(btnExcluir);
+        tdAcoes.appendChild(btnCancelar);
+        tr.appendChild(tdAcoes);
+
+        tabela.appendChild(tr);
     });
 }
 
 function habilitarEdicao(id) {
 
-    document.getElementById(
-        `nome-${id}`
-    ).readOnly = false;
+    ["nome", "email", "telefone", "atuacao", "interesse"].forEach(campo => {
+        document.getElementById(`${campo}-${id}`).readOnly = false;
+    });
 
-    document.getElementById(
-        `email-${id}`
-    ).readOnly = false;
-
-    document.getElementById(
-        `telefone-${id}`
-    ).readOnly = false;
-
-    document.getElementById(
-        `atuacao-${id}`
-    ).readOnly = false;
-
-    document.getElementById(
-        `interesse-${id}`
-    ).readOnly = false;
-
-    const botao =
-        document.getElementById(
-            `btnEditar-${id}`
-        );
-
-    botao.innerText = "Salvar";
-
-    botao.onclick = function () {
-
-        salvarEdicao(id);
-    };
+    // Troca ícone de Editar pelo de Salvar
+    const btnEditar = document.getElementById(`btnEditar-${id}`);
+    btnEditar.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4.5L11.5 0H2zm3 1h5v3H5V1zm0 5h6a1 1 0 0 1 1 1v5H4V7a1 1 0 0 1 1-1z"/>
+        </svg>
+    `;
+    btnEditar.onclick = () => salvarEdicao(id);
 }
 
 async function salvarEdicao(id) {
 
-    const nome =
-        document.getElementById(
-            `nome-${id}`
-        ).value;
+    const nome      = document.getElementById(`nome-${id}`).value;
+    const email     = document.getElementById(`email-${id}`).value;
+    const telefone  = document.getElementById(`telefone-${id}`).value;
+    const atuacao   = document.getElementById(`atuacao-${id}`).value;
+    const interesse = document.getElementById(`interesse-${id}`).value;
 
-    const email =
-        document.getElementById(
-            `email-${id}`
-        ).value;
-
-    const telefone =
-        document.getElementById(
-            `telefone-${id}`
-        ).value;
-
-    const atuacao =
-        document.getElementById(
-            `atuacao-${id}`
-        ).value;
-
-    const interesse =
-        document.getElementById(
-            `interesse-${id}`
-        ).value;
-
-    const { error } =
-        await supabaseClient
-            .from("Cadastro")
-            .update({
-
-                nome,
-                email,
-                telefone,
-                atuacao,
-                interesse
-
-            })
-            .eq("id", id);
+    const { error } = await supabaseClient
+        .from("Cadastro")
+        .update({ nome, email, telefone, atuacao, interesse })
+        .eq("id", id);
 
     if (error) {
-
         console.error(error);
-
-        alert(
-            "Erro ao atualizar registro."
-        );
-
+        alert("Erro ao atualizar registro.");
         return;
     }
 
-    document.getElementById(
-        `nome-${id}`
-    ).readOnly = true;
+    ["nome", "email", "telefone", "atuacao", "interesse"].forEach(campo => {
+        document.getElementById(`${campo}-${id}`).readOnly = true;
+    });
 
-    document.getElementById(
-        `email-${id}`
-    ).readOnly = true;
+    // Volta ícone para Editar
+    const btnEditar = document.getElementById(`btnEditar-${id}`);
+    btnEditar.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10L2 14l.146-3.854 10-10zM11.207 2 3 10.207V13h2.793L14 4.793 11.207 2z"/>
+        </svg>
+    `;
+    btnEditar.onclick = () => habilitarEdicao(id);
 
-    document.getElementById(
-        `telefone-${id}`
-    ).readOnly = true;
-
-    document.getElementById(
-        `atuacao-${id}`
-    ).readOnly = true;
-
-    document.getElementById(
-        `interesse-${id}`
-    ).readOnly = true;
-
-    const botao =
-        document.getElementById(
-            `btnEditar-${id}`
-        );
-
-    botao.innerHTML = "Editar";
-
-    botao.onclick = function () {
-
-        habilitarEdicao(id);
-    };
-
-    alert(
-        "Registro atualizado com sucesso!"
-    );
+    alert("Registro atualizado com sucesso!");
 }
 
 async function excluirRegistro(id) {
 
-    const confirmar =
-        confirm(
-            "Deseja realmente excluir?"
-        );
-
+    const confirmar = confirm("Deseja realmente excluir?");
     if (!confirmar) return;
 
-    const { error } =
-        await supabaseClient
-            .from("Cadastro")
-            .delete()
-            .eq("id", id);
+    const { error } = await supabaseClient
+        .from("Cadastro")
+        .delete()
+        .eq("id", id);
 
     if (error) {
-
         console.error(error);
-
-        alert(
-            "Erro ao excluir registro."
-        );
-
+        alert("Erro ao excluir registro.");
         return;
     }
 
-    alert(
-        "Registro excluído!"
-    );
-
+    alert("Registro excluído!");
     carregarInscritos();
 }
 
 async function cancelarEdicao(id) {
 
-    // Busca os dados originais do banco
     const { data, error } = await supabaseClient
         .from("Cadastro")
         .select("*")
@@ -319,26 +238,21 @@ async function cancelarEdicao(id) {
         return;
     }
 
-    // Restaura os valores originais nos inputs
-    document.getElementById(`nome-${id}`).value = data.nome ?? "";
-    document.getElementById(`email-${id}`).value = data.email ?? "";
-    document.getElementById(`telefone-${id}`).value = data.telefone ?? "";
-    document.getElementById(`atuacao-${id}`).value = data.atuacao ?? "";
-    document.getElementById(`interesse-${id}`).value = data.interesse ?? "";
+    // Restaura os valores originais
+    ["nome", "email", "telefone", "atuacao", "interesse"].forEach(campo => {
+        const input = document.getElementById(`${campo}-${id}`);
+        input.value = data[campo] ?? "";
+        input.readOnly = true;
+    });
 
-    // Coloca todos os campos de volta como readonly
-    document.getElementById(`nome-${id}`).readOnly = true;
-    document.getElementById(`email-${id}`).readOnly = true;
-    document.getElementById(`telefone-${id}`).readOnly = true;
-    document.getElementById(`atuacao-${id}`).readOnly = true;
-    document.getElementById(`interesse-${id}`).readOnly = true;
-
-    // Restaura o botão Editar
-    const botao = document.getElementById(`btnEditar-${id}`);
-    botao.innerText = "Editar";
-    botao.onclick = function () {
-        habilitarEdicao(id);
-    };
+    // Volta ícone para Editar
+    const btnEditar = document.getElementById(`btnEditar-${id}`);
+    btnEditar.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10L2 14l.146-3.854 10-10zM11.207 2 3 10.207V13h2.793L14 4.793 11.207 2z"/>
+        </svg>
+    `;
+    btnEditar.onclick = () => habilitarEdicao(id);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
