@@ -58,57 +58,55 @@ async function carregarInscritos() {
         const tr = document.createElement("tr");
 
         tr.innerHTML = `
-            <tr>
-                <td>
-                    <input
-                        type="text"
-                        id="nome-${inscrito.id}"
-                        value="${inscrito.nome ?? ""}"
-                        readonly
-                    >
-                </td>
+    <td>
+        <input
+            type="text"
+            id="nome-${inscrito.id}"
+            value="${inscrito.nome ?? ""}"
+            readonly
+        >
+    </td>
 
-                <td>
-                    <input
-                        type="email"
-                        id="email-${inscrito.id}"
-                        value="${inscrito.email ?? ""}"
-                        readonly
-                    >
-                </td>
+    <td>
+        <input
+            type="email"
+            id="email-${inscrito.id}"
+            value="${inscrito.email ?? ""}"
+            readonly
+        >
+    </td>
 
-                <td>
-                    <input
-                        type="text"
-                        id="telefone-${inscrito.id}"
-                        value="${inscrito.telefone ?? ""}"
-                        readonly
-                    >
-                </td>
+    <td>
+        <input
+            type="text"
+            id="telefone-${inscrito.id}"
+            value="${inscrito.telefone ?? ""}"
+            readonly
+        >
+    </td>
 
-                <td>
-                    <input
-                        type="text"
-                        id="atuacao-${inscrito.id}"
-                        value="${inscrito.atuacao ?? ""}"
-                        readonly
-                    >
-                </td>
+    <td>
+        <input
+            type="text"
+            id="atuacao-${inscrito.id}"
+            value="${inscrito.atuacao ?? ""}"
+            readonly
+        >
+    </td>
 
-                <td>
-                    <input
-                        type="text"
-                        id="interesse-${inscrito.id}"
-                        value="${inscrito.interesse ?? ""}"
-                        readonly
-                    >
-                </td>
+    <td>
+        <input
+            type="text"
+            id="interesse-${inscrito.id}"
+            value="${inscrito.interesse ?? ""}"
+            readonly
+        >
+    </td>
 
-                <td>
-                    ${inscrito.data ?? ""}
-                </td>
-            </tr>
-        `;
+    <td>
+        ${inscrito.data ?? ""}
+    </td>
+`;
 
         // Cria a célula de ações
         const tdAcoes = document.createElement("td");
