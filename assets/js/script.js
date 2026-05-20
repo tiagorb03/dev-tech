@@ -151,8 +151,6 @@ async function carregarInscritos() {
     });
 }
 
-btnCancelar.style.display = "none";
-
 function habilitarEdicao(id) {
 
     ["nome", "email", "telefone", "atuacao", "interesse"].forEach(campo => {
@@ -168,8 +166,6 @@ function habilitarEdicao(id) {
     `;
     btnEditar.onclick = () => salvarEdicao(id);
 }
-
-document.getElementById(`btnCancelar-${id}`).style.display = "inline-flex";
 
 async function salvarEdicao(id) {
 
@@ -256,8 +252,6 @@ async function cancelarEdicao(id) {
     `;
     btnEditar.onclick = () => habilitarEdicao(id);
 }
-
-document.getElementById(`btnCancelar-${id}`).style.display = "none";
 
 document.addEventListener("DOMContentLoaded", function () {
  
